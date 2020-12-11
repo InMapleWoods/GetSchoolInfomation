@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".LoginActivity">
+
+        <EditText
+                android:id="@+id/accountEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="70dp"
+                android:ems="10"
+                android:hint="@string/accountHint"
+                android:inputType="number"
+                android:labelFor="@id/accountEditText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="130dp"
+                android:ems="10"
+                android:hint="@string/passwordHint"
+                android:inputType="textPassword"
+                android:labelFor="@id/passwordEditText"
+                app:layout_constraintLeft_toLeftOf="@+id/accountEditText"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/accountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/accountLabel"
+                app:layout_constraintRight_toLeftOf="@+id/accountEditText"
+                app:layout_constraintTop_toTopOf="@+id/accountEditText"/>
+
+
+        <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/passwordLabel"
+                app:layout_constraintRight_toLeftOf="@+id/passwordEditText"
+                app:layout_constraintTop_toTopOf="@+id/passwordEditText"/>
+
+        <TextView
+                android:id="@+id/AppPageConfigLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/appConfig"
+                app:layout_constraintRight_toLeftOf="@+id/radioGroup_App"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup_App"/>
+
+        <RadioGroup
+                android:id="@+id/radioGroup_App"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="@+id/passwordEditText"
+                app:layout_constraintTop_toTopOf="@+id/passwordEditText">
+
+            <RadioButton
+                    android:id="@+id/AppPageExam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/examPage"/>
+
+            <RadioButton
+                    android:id="@+id/AppPageGrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gradePage"/>
+
+            <RadioButton
+                    android:id="@+id/AppPageNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newsPage"/>
+
+            <RadioButton
+                    android:id="@+id/AppPageBath"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="-180dp"
+                    android:text="@string/bathPage"/>
+
+            <RadioButton
+                    android:id="@+id/AppPageCanteen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/canteenPage"/>
+        </RadioGroup>
+
+        <TextView
+                android:id="@+id/WidgetPageConfigLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/widgetConfig"
+                app:layout_constraintRight_toLeftOf="@+id/radioGroup_Widget"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup_Widget"/>
+
+        <RadioGroup
+                android:id="@+id/radioGroup_Widget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="@+id/radioGroup_App"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup_App">
+
+            <RadioButton
+                    android:id="@+id/WidgetPageExam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/examPage"/>
+
+            <RadioButton
+                    android:id="@+id/WidgetPageGrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gradePage"/>
+
+            <RadioButton
+                    android:id="@+id/WidgetPageNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newsPage"/>
+
+            <RadioButton
+                    android:id="@+id/WidgetPageBath"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="-180dp"
+                    android:text="@string/bathPage"/>
+
+            <RadioButton
+                    android:id="@+id/WidgetPageCanteen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/canteenPage"/>
+
+        </RadioGroup>
+
+        <TextView
+                android:id="@+id/WidgetBackgroundColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/widgetBackgroundColor"
+                app:layout_constraintRight_toLeftOf="@+id/WidgetBackgroundColorView"
+                app:layout_constraintTop_toTopOf="@+id/WidgetBackgroundColorView"/>
+
+        <View
+                android:id="@+id/WidgetBackgroundColorView"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:background="#4FB14F"
+                app:layout_constraintLeft_toLeftOf="@+id/radioGroup_Widget"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup_Widget"/>
+
+        <TextView
+                android:id="@+id/WidgetTextColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/widgetTextColor"
+                app:layout_constraintRight_toLeftOf="@+id/WidgetTextColorView"
+                app:layout_constraintTop_toTopOf="@+id/WidgetTextColorView"/>
+
+        <View
+                android:id="@+id/WidgetTextColorView"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:background="#ECEBEB"
+                app:layout_constraintLeft_toLeftOf="@+id/WidgetBackgroundColorView"
+                app:layout_constraintTop_toTopOf="@+id/WidgetBackgroundColorView"/>
+
+        <TextView
+                android:id="@+id/SemesterChooseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:text="@string/SemesterChoose"
+                app:layout_constraintLeft_toLeftOf="@+id/WidgetTextColorLabel"
+                app:layout_constraintTop_toTopOf="@+id/SemesterChooseList"/>
+
+        <Spinner
+                android:id="@+id/SemesterChooseList"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="40dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintLeft_toRightOf="@+id/SemesterChooseLabel"
+                app:layout_constraintTop_toTopOf="@+id/WidgetTextColorView">
+
+        </Spinner>
+        <TextView
+                android:id="@+id/switchBtnLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="@string/config_switchBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/SemesterChooseLabel"
+                app:layout_constraintTop_toTopOf="@+id/switchButton"/>
+
+        <Switch
+                android:id="@+id/switchButton"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:switchMinWidth="40dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintLeft_toLeftOf="@+id/SemesterChooseList"
+                app:layout_constraintTop_toTopOf="@+id/SemesterChooseList">
+
+        </Switch>
+
+        <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="251dp"
+                android:layout_height="53dp"
+                android:text="@string/loginBtn"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintRight_toRightOf="@+id/SemesterChooseList"
+                app:layout_constraintTop_toTopOf="@+id/SemesterChooseList"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
