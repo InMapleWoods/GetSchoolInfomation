@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="1000dp"
             tools:context=".LoginActivity">
 
         <EditText
@@ -64,52 +64,21 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:text="@string/appConfig"
-                app:layout_constraintRight_toLeftOf="@+id/radioGroup_App"
-                app:layout_constraintTop_toTopOf="@+id/radioGroup_App"/>
+                app:layout_constraintRight_toLeftOf="@+id/spinner_App"
+                app:layout_constraintTop_toTopOf="@+id/spinner_App"/>
 
-        <RadioGroup
-                android:id="@+id/radioGroup_App"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Spinner
+                android:id="@+id/spinner_App"
+                android:entries="@array/select_show_res"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginLeft="30dp"
-                android:orientation="horizontal"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center"
                 app:layout_constraintLeft_toLeftOf="@+id/passwordEditText"
                 app:layout_constraintTop_toTopOf="@+id/passwordEditText">
-
-            <RadioButton
-                    android:id="@+id/AppPageExam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/examPage"/>
-
-            <RadioButton
-                    android:id="@+id/AppPageGrade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gradePage"/>
-
-            <RadioButton
-                    android:id="@+id/AppPageNews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/newsPage"/>
-
-            <RadioButton
-                    android:id="@+id/AppPageBath"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="-180dp"
-                    android:text="@string/bathPage"/>
-
-            <RadioButton
-                    android:id="@+id/AppPageCanteen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/canteenPage"/>
-        </RadioGroup>
+        </Spinner>
 
         <TextView
                 android:id="@+id/WidgetPageConfigLabel"
@@ -118,52 +87,20 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:text="@string/widgetConfig"
-                app:layout_constraintRight_toLeftOf="@+id/radioGroup_Widget"
-                app:layout_constraintTop_toTopOf="@+id/radioGroup_Widget"/>
+                app:layout_constraintRight_toLeftOf="@+id/spinner_Widget"
+                app:layout_constraintTop_toTopOf="@+id/spinner_Widget"/>
 
-        <RadioGroup
-                android:id="@+id/radioGroup_Widget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Spinner
+                android:id="@+id/spinner_Widget"
+                android:entries="@array/select_show_res"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="60dp"
-                android:orientation="horizontal"
-                app:layout_constraintLeft_toLeftOf="@+id/radioGroup_App"
-                app:layout_constraintTop_toTopOf="@+id/radioGroup_App">
-
-            <RadioButton
-                    android:id="@+id/WidgetPageExam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/examPage"/>
-
-            <RadioButton
-                    android:id="@+id/WidgetPageGrade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gradePage"/>
-
-            <RadioButton
-                    android:id="@+id/WidgetPageNews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/newsPage"/>
-
-            <RadioButton
-                    android:id="@+id/WidgetPageBath"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="-180dp"
-                    android:text="@string/bathPage"/>
-
-            <RadioButton
-                    android:id="@+id/WidgetPageCanteen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/canteenPage"/>
-
-        </RadioGroup>
+                android:spinnerMode="dropdown"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="@+id/spinner_App"
+                app:layout_constraintTop_toTopOf="@+id/spinner_App">
+        </Spinner>
 
         <TextView
                 android:id="@+id/WidgetBackgroundColorLabel"
@@ -181,8 +118,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="60dp"
                 android:background="#4FB14F"
-                app:layout_constraintLeft_toLeftOf="@+id/radioGroup_Widget"
-                app:layout_constraintTop_toTopOf="@+id/radioGroup_Widget"/>
+                app:layout_constraintLeft_toLeftOf="@+id/spinner_Widget"
+                app:layout_constraintTop_toTopOf="@+id/spinner_Widget"/>
 
         <TextView
                 android:id="@+id/WidgetTextColorLabel"
@@ -224,6 +161,7 @@
                 app:layout_constraintTop_toTopOf="@+id/WidgetTextColorView">
 
         </Spinner>
+
         <TextView
                 android:id="@+id/switchBtnLabel"
                 android:layout_width="wrap_content"
@@ -248,13 +186,13 @@
 
         <Button
                 android:id="@+id/loginBtn"
-                android:layout_width="251dp"
-                android:layout_height="53dp"
+                android:layout_width="250dp"
+                android:layout_height="55dp"
                 android:text="@string/loginBtn"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="45dp"
                 android:layout_marginRight="20dp"
-                app:layout_constraintRight_toRightOf="@+id/SemesterChooseList"
-                app:layout_constraintTop_toTopOf="@+id/SemesterChooseList"/>
+                app:layout_constraintLeft_toRightOf="@+id/switchBtnLabel"
+                app:layout_constraintTop_toBottomOf="@+id/switchBtnLabel"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

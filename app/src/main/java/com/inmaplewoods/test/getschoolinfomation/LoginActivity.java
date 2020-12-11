@@ -93,44 +93,8 @@ public class LoginActivity extends AppCompatActivity {
         if (configuration != null) {
             ((EditText) findViewById(R.id.accountEditText)).setText(configuration.user.Account);
             ((EditText) findViewById(R.id.passwordEditText)).setText((configuration.user.Password));
-            switch (configuration.appConfig.choose) {
-                case GradePage:
-                    ((RadioButton) findViewById(R.id.AppPageGrade)).setChecked(true);
-                    break;
-                case ExamPage:
-                    ((RadioButton) findViewById(R.id.AppPageExam)).setChecked(true);
-                    break;
-                case NewsPage:
-                    ((RadioButton) findViewById(R.id.AppPageNews)).setChecked(true);
-                    break;
-                case BathPage:
-                    ((RadioButton) findViewById(R.id.AppPageBath)).setChecked(true);
-                    break;
-                case CanteenPage:
-                    ((RadioButton) findViewById(R.id.AppPageCanteen)).setChecked(true);
-                    break;
-                default:
-                    break;
-            }
-            switch (configuration.widgetConfig.choose) {
-                case GradePage:
-                    ((RadioButton) findViewById(R.id.WidgetPageGrade)).setChecked(true);
-                    break;
-                case ExamPage:
-                    ((RadioButton) findViewById(R.id.WidgetPageExam)).setChecked(true);
-                    break;
-                case NewsPage:
-                    ((RadioButton) findViewById(R.id.WidgetPageNews)).setChecked(true);
-                    break;
-                case BathPage:
-                    ((RadioButton) findViewById(R.id.WidgetPageBath)).setChecked(true);
-                    break;
-                case CanteenPage:
-                    ((RadioButton) findViewById(R.id.WidgetPageCanteen)).setChecked(true);
-                    break;
-                default:
-                    break;
-            }
+            ((Spinner) findViewById(R.id.spinner_App)).setSelection(configuration.appConfig.choose.ordinal());
+            ((Spinner) findViewById(R.id.spinner_Widget)).setSelection(configuration.widgetConfig.choose.ordinal());
             findViewById(R.id.WidgetBackgroundColorView).setBackgroundColor(configuration.widgetConfig.backgroundColor);
             findViewById(R.id.WidgetTextColorView).setBackgroundColor(configuration.widgetConfig.textColor);
             String[] s = new RobotFactory(this).GetTimes();
@@ -184,48 +148,12 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             configuration.user.Account = account;
             configuration.user.Password = password;
-            RadioGroup groupApp = findViewById(R.id.radioGroup_App);
-            int idApp = groupApp.getCheckedRadioButtonId();
-            switch (idApp) {
-                case R.id.AppPageExam:
-                    configuration.appConfig.choose = AppConfig.PageChoose.ExamPage;
-                    break;
-                case R.id.AppPageNews:
-                    configuration.appConfig.choose = AppConfig.PageChoose.NewsPage;
-                    break;
-                case R.id.AppPageGrade:
-                    configuration.appConfig.choose = AppConfig.PageChoose.GradePage;
-                    break;
-                case R.id.AppPageBath:
-                    configuration.appConfig.choose = AppConfig.PageChoose.BathPage;
-                    break;
-                case R.id.AppPageCanteen:
-                    configuration.appConfig.choose = AppConfig.PageChoose.CanteenPage;
-                    break;
-                default:
-                    break;
-            }
-            RadioGroup groupWidget = findViewById(R.id.radioGroup_Widget);
-            int idWidget = groupWidget.getCheckedRadioButtonId();
-            switch (idWidget) {
-                case R.id.WidgetPageExam:
-                    configuration.widgetConfig.choose = WidgetConfig.PageChoose.ExamPage;
-                    break;
-                case R.id.WidgetPageNews:
-                    configuration.widgetConfig.choose = WidgetConfig.PageChoose.NewsPage;
-                    break;
-                case R.id.WidgetPageGrade:
-                    configuration.widgetConfig.choose = WidgetConfig.PageChoose.GradePage;
-                    break;
-                case R.id.WidgetPageBath:
-                    configuration.widgetConfig.choose = WidgetConfig.PageChoose.BathPage;
-                    break;
-                case R.id.WidgetPageCanteen:
-                    configuration.widgetConfig.choose = WidgetConfig.PageChoose.CanteenPage;
-                    break;
-                default:
-                    break;
-            }
+            Spinner spinnerApp = findViewById(R.id.spinner_App);
+            int idApp = spinnerApp.getSelectedItemPosition();
+            configuration.appConfig.choose = Config.PageChoose.values()[idApp];
+            Spinner spinnerWidget = findViewById(R.id.spinner_Widget);
+            int idWidget = spinnerWidget.getSelectedItemPosition();
+            configuration.widgetConfig.choose = Config.PageChoose.values()[idWidget];
             configuration.widgetConfig.backgroundColor = ((ColorDrawable) (findViewById(R.id.WidgetBackgroundColorView).getBackground())).getColor();
             configuration.widgetConfig.textColor = ((ColorDrawable) (findViewById(R.id.WidgetTextColorView).getBackground())).getColor();
             configuration.time = ((Spinner) findViewById(R.id.SemesterChooseList)).getSelectedItem().toString();

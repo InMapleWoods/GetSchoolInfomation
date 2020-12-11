@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_show_res">
+        <item>成绩</item>
+        <item>考试</item>
+        <item>新闻</item>
+        <item>浴室</item>
+        <item>食堂</item>
+    </string-array>
+</resources>
